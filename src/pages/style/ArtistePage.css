@@ -1,0 +1,26 @@
+    /* Style for the h1 element */
+    .headTag {
+        color: blue;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    /* Style for the p element */
+    .paraTag {
+        color: red;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    /* Style for the img element */
+    img {
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Style for the div elements */
+    div {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: lightgray;
+    }

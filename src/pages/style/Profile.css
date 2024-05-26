@@ -1,0 +1,22 @@
+p {
+    margin-bottom: 10px;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+  }
+    
+  button {
+    background-color:blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  button:hover {
+    background-color: blue;
+  }
+  

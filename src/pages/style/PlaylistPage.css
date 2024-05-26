@@ -1,0 +1,54 @@
+.headTag {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .paraTag {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .spin {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .container {
+    margin-top: 20px;
+  }
+  
+  .container .divdiv {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .container .divdiv .divpara {
+    font-size:larger;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .container .divdiv .divpara:hover {
+    color: #666;
+  }
+  
+  .container .divdiv .divpara {
+    font-weight: bold;
+  }
+  
+  .container .divdiv .divpara:last-child {
+    margin-top: 5px;
+    font-weight: normal;
+  }
+  

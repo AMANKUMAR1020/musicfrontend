@@ -1,0 +1,57 @@
+/* CSS Style for SongList Component */
+
+/* Container */
+.Container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading */
+  .Heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Loading Animation */
+  .AiOutlineLoading {
+    margin: 20px auto;
+    display: block;
+  }
+  
+  /* Error Message */
+  .ErrorMessage {
+    color: red;
+    margin-bottom: 20px;
+  }
+  
+  /* Song List */
+  .SongList{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Individual Song */
+  .ArtisteSong {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Empty Song List Message */
+  .Empty-Song-List-Message {
+    color: #999;
+    margin-bottom: 20px;
+  }
+  
+  /* Music Player
+  .MusicPlayer {
+    margin-top: 20px;
+  }
+   */

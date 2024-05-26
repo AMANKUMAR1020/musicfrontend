@@ -1,0 +1,63 @@
+/* Style for the playlist container */
+.playlist-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for the playlist title */
+  .playlist-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the playlist description */
+  .playlist-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the playlist privacy status */
+  .playlist-privacy {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the number of songs */
+  .playlist-songs {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the play all button */
+  .play-all-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Style for the playlist songs */
+  .playlist-songs-container {
+    margin-top: 20px;
+  }
+  
+  /* Style for each individual song */
+  .song {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for the music player */
+  .music-player {
+    margin-top: 20px;
+  }
+  
