@@ -20,7 +20,7 @@ const PlayingBar = ({ time, track, onSeek, trackRef }) => {
 		
 			<p class="text">{trackRef ? convertToMins(trackRef.currentTime) : "0:00"}</p>
 		
-			<input class="range" type="range" value={!isNaN(time) ? time : 0}  onChange={onSeek} />
+			{/* <input class="range" type="range" value={!isNaN(time) ? time : 0}  onChange={onSeek} /> */}
 		
 			<p class="text">{track?.duration ? track?.duration : "NaN"}</p>
 		</div>
