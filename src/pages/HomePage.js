@@ -22,14 +22,21 @@ const HomePage = () => {
 	const Register = () =>{console.log('Register done'); navigate('/auth/register');}
 
 	return (
+		<>
 		<div className="container main-container">
-		<h1>Welcome to the Front Page</h1>
-		<h1>HomePage</h1>
-		<button onClick={Login}>Login</button>
-		<button onClick={Register}>Register</button>
-		<button onClick={Logout}>Logout</button>
-		<Outlet/>
+		<h1 className="headline1">Welcome to the Front Page</h1>
+		<h1 className="headline2">HomePage</h1>
+		<h4>The Project is on Progress.. </h4>
+		<i> it will be finised within 4 to 5 days </i><br/>
+
+		<h3>"<i> To start the application please Login or register </i>"<br/></h3>
+
+		<button className="btn-type1" onClick={Login}>Login</button>
+		<button className="btn-type1" onClick={Register}>Register</button>
+		<button className="btn-type1" onClick={Logout}>Logout</button>
 		</div>
+		<Outlet/>
+		</>
 	);
 };
 

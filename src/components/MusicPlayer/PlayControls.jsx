@@ -25,15 +25,15 @@ const PlayControls = ({
 
 	return (
 		<div class="track-button">
-			<button><TbArrowsShuffle /></button>
+			<button className="btn-type5" ><TbArrowsShuffle /></button>
 
-			<button onClick={onPrevious}> <TbPlayerTrackPrevFilled/></button>
+			<button className="btn-type5" onClick={onPrevious}> <TbPlayerTrackPrevFilled/></button>
 			
-			<button onClick={onPlay}> {!isPlaying ? <AiFillPlayCircle /> : <AiFillPauseCircle />}</button>
+			<button className="btn-type5" onClick={onPlay}> {!isPlaying ? <AiFillPlayCircle /> : <AiFillPauseCircle />}</button>
 			
-			<button onClick={onNext}> <TbPlayerTrackNextFilled size={16} /></button>
+			<button className="btn-type5" onClick={onNext}> <TbPlayerTrackNextFilled size={16} /></button>
 			
-			<button onClick={() => dispatch(toggleRepeat())}>
+			<button className="btn-type5" onClick={() => dispatch(toggleRepeat())}>
 				{repeatStatus === "OFF" ? (
 						<TbRepeatOff color="inherit" size={18} />
 					) : repeatStatus === "SINGLE" ? (
