@@ -22,7 +22,6 @@ const AuthLayout = () => {
 	
 	return (
 		<main>
-            BeatBox
             <Outlet />
 			{/* {currentTrack && <MusicPlayer />} */}
 		</main>

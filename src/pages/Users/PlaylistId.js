@@ -76,29 +76,26 @@ const PlaylistId = () => {
 
 	return (
 		<>
-		<h2 className="headline1">{data?.playlist?.title}</h2>
-		<p className="headline2">{data?.playlist?.description}</p>
-		{data?.playlist?.isPrivate ? (
-			<div className="text">private</div>
-		) : (
-			<div className="text">public</div>
-		)}
+			<h2 className="headline1">{data?.playlist?.title}</h2>
+			<p className="headline2">{data?.playlist?.description}</p>
+			
+			{data?.playlist?.isPrivate ? (<div className="text">private</div>) : (<div className="text">public</div>)}
 
-		<MyNavbar/>
+			<MyNavbar/>
 
-		<h4>{data?.playlistSongs?.length} Songs</h4>
-		<button className="btn-type2" onClick={handlePlay}>
-			Play All<BsCollectionPlayFill/>
-		</button>
+			<h4>{data?.playlistSongs?.length} Songs</h4>
+			<button className="btn-type2" onClick={handlePlay}>
+				Play All<BsCollectionPlayFill/>
+			</button>
 
-		<div className="Container">
-			{data?.playlistSongs?.map((song) => (
-			<div className="song">
-				<ArtisteSong key={song?._id} song={song} handlePlay={onSongPlay} />
+			<div className="Container">
+				{data?.playlistSongs?.map((song) => (
+				<div className="song">
+					<ArtisteSong key={song?._id} song={song} handlePlay={onSongPlay} />
+				</div>
+				))}
 			</div>
-			))}
-		</div>
-		{currentTrack && <MusicPlayer className="music-player" />}
+			{currentTrack && <MusicPlayer className="music-player" />}
 		</>
 	);
 };

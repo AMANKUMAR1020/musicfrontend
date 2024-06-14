@@ -150,12 +150,7 @@ export default function SongUpload() {
       {!songUrl && (<div className="innerbar" style={{ width: `${progresspercentsong}%` }}>{progresspercentsong}%</div>)}
       {songUrl && <audio controls src={songUrl} alt="image" height={70} weight={80}></audio>}
 
-      <button
-        onClick={handleSubmit}
-        style={{ backgroundColor: 'blue', color: 'white', padding: '10px 20px', borderRadius: '5px', border: 'none', fontSize: '20px', cursor: 'pointer' }}
-      >
-        Upload Song
-      </button>
+      <button className="btn-type4" onClick={handleSubmit}>Upload Song</button>
       {loading && <p style={{ textAlign: 'center' }}>Loading...</p>}
       <Outlet />
     </>
