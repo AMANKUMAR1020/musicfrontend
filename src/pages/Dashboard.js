@@ -3,18 +3,54 @@ import "./style/HomePage.css";
 import SongList from "./SongList";
 import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
+import MyNavbar from "./MyNavbar";
+import Footer from "./Footer";
 
 const Dashboard = () => {
   return (
     <>
-      <Navbar/>
-      <SongList />
-      <Outlet />
+      <MyNavbar/>
+        <Navbar/>
+        <SongList />
+        <Outlet />
+      <Footer/>
     </>
   );
 };
 
 export default Dashboard;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from "react";
+// import "./style/HomePage.css";
+// import SongList from "./SongList";
+// import Navbar from "./Navbar";
+// import { Outlet } from "react-router-dom";
+
+// const Dashboard = () => {
+//   return (
+//     <>
+//       <Navbar/>
+//       <SongList />
+//       <Outlet />
+//     </>
+//   );
+// };
+
+// export default Dashboard;
 
 
 

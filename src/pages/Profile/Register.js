@@ -3,8 +3,10 @@ import { useDispatch } from "react-redux";
 import { client } from "../../api/index";
 import { loginUser } from "../../redux/slices/userSlice";
 import { resetPlayer } from "../../redux/slices/playerSlice";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import '../style/Register.css'
+import MyNavbar from "../MyNavbar";
+import Footer from "../Footer";
 
 const RegisterPage = () => {
   const [error, setError] = useState(null);
@@ -45,6 +47,7 @@ const RegisterPage = () => {
 
   return (
     <>
+    <MyNavbar/>
       <h1 className="title">RegisterPage</h1>
       <div className="form-group">
         <label className="label">Username:</label>
@@ -68,6 +71,9 @@ const RegisterPage = () => {
       <button className="button" onClick={handleLogin}>
         {loading ? <p>Loading...</p> : <p>Submit</p>}
       </button>
+
+    <Outlet/>
+    <Footer/>
     </>
   );
 };

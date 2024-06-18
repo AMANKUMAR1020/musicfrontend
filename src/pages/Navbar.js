@@ -19,7 +19,7 @@ const Navbar = () => {
 
         </div>
 
-        <MyNavbar/>
+        {/* <MyNavbar/> */}
 
       <Outlet />
     </>

@@ -32,7 +32,7 @@ const TrackDetails = ({ track }) => {
 
   const checking = () => {
     const result = track.likes.find((id) => id === user._id);
-    return result;
+    return result || like;
   };
 
   return (
@@ -51,7 +51,7 @@ const TrackDetails = ({ track }) => {
           handleLike(e);
         }}
       >
-        {checking() || like ? <FaHeart /> : <CiHeart />}
+        {checking() ? <FaHeart /> : <CiHeart />}
       </p>
 
       <p className="text">{track.title}</p>

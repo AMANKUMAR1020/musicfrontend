@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { client } from "../../api/index";
 import { loginUser,setUser } from "../../redux/slices/userSlice";
 import { resetPlayer } from "../../redux/slices/playerSlice";
 import ClipLoader from "react-spinners/ClipLoader";
 import '../style/HomePage.css'
+import MyNavbar from "../MyNavbar";
+import Footer from "../Footer";
 
 const LoginPage = () => {
 
@@ -69,6 +71,7 @@ const LoginPage = () => {
 
 	return (
 		<>
+		<MyNavbar/>
 			<h1 className="headline1">Login</h1>
 			
 			<h2 className="headline2">Username</h2>
@@ -87,6 +90,9 @@ const LoginPage = () => {
 
 			{error && <p style={{ color: 'red' }}>{error}</p>}
 			<button className="btn-type1" onClick={handleLogin}>Login</button>
+
+		<Outlet/>
+		<Footer/>
 		</>
 	);
 	

@@ -10,6 +10,8 @@ import { logoutUser } from "../redux/slices/userSlice";
 import { useDispatch } from "react-redux";
 //import '../App.css';
 import '../pages/style/HomePage.css'
+import Footer from "./Footer";
+import MyNavbar from "./MyNavbar";
 
 const HomePage = () => {
 	const navigate = useNavigate();
@@ -23,19 +25,21 @@ const HomePage = () => {
 
 	return (
 		<>
-		<div className="container main-container">
-		<h1 className="headline1">Welcome to the Front Page</h1>
-		<h1 className="headline2">HomePage</h1>
-		<h4>The Project is on Progress.. </h4>
-		<i> it will be finised within 4 to 5 days </i><br/>
+		<MyNavbar/>
+			<div className="container main-container">
+			<h1 className="headline1">Welcome to the Front Page</h1>
+			<h1 className="headline2">HomePage</h1>
+			<h4>The Project is on Progress.. </h4>
+			<i> it will be finised within 4 to 5 days </i><br/>
 
-		<h3>"<i> To start the application please Login or register </i>"<br/></h3>
+			<h3>"<i> To start the application please Login or register </i>"<br/></h3>
 
-		<button className="btn-type1" onClick={Login}>Login</button>
-		<button className="btn-type1" onClick={Register}>Register</button>
-		<button className="btn-type1" onClick={Logout}>Logout</button>
-		</div>
+			<button className="btn-type1" onClick={Login}>Login</button>
+			<button className="btn-type1" onClick={Register}>Register</button>
+			<button className="btn-type1" onClick={Logout}>Logout</button>
+			</div>
 		<Outlet/>
+		<Footer/>
 		</>
 	);
 };
