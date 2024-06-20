@@ -8,6 +8,7 @@
 import { useNavigate,Outlet } from "react-router-dom";
 import { logoutUser } from "../redux/slices/userSlice";
 import { useDispatch } from "react-redux";
+import { resetPlayer } from "../redux/slices/playerSlice";
 //import '../App.css';
 import '../pages/style/HomePage.css'
 import Footer from "./Footer";
@@ -17,11 +18,11 @@ const HomePage = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
-	const Login = () => {console.log('Login navigate');	navigate('/auth/login');}
+	const Login = () => {console.log('Login navigate');	dispatch(resetPlayer()); navigate('/auth/login');}
 
-	const Logout = () => {console.log('Logout done');  dispatch(logoutUser()); navigate('/');}
+	const Logout = () => {console.log('Logout done'); dispatch(resetPlayer()); dispatch(logoutUser()); navigate('/');}
 
-	const Register = () =>{console.log('Register done'); navigate('/auth/register');}
+	const Register = () =>{console.log('Register done'); dispatch(resetPlayer()); navigate('/auth/register');}
 
 	return (
 		<>
@@ -30,7 +31,7 @@ const HomePage = () => {
 			<h1 className="headline1">Welcome to the Front Page</h1>
 			<h1 className="headline2">HomePage</h1>
 			<h4>The Project is on Progress.. </h4>
-			<i> it will be finised within 4 to 5 days </i><br/>
+			<i> it will be finised within a day </i><br/>
 
 			<h3>"<i> To start the application please Login or register </i>"<br/></h3>
 

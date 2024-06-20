@@ -5,6 +5,8 @@ import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import "./music.css";
 
+import { toast, ToastContainer } from 'react-toastify';
+
 const TrackDetails = ({ track }) => {
   const { user, token } = useSelector((state) => state.user);
   const [like, setLike] = useState(false);
@@ -25,6 +27,17 @@ const TrackDetails = ({ track }) => {
 
       console.log("Your favorites have been updated");
       setLike(!like);
+
+      const message1 = like ? "Like Successufully!" : "UnLike Successufully!" 
+      const message2 = like ? "Like Successufully! This is a success message " : "UnLike Successufully!  This is a success message " 
+
+      toast.success(message1, {
+        data: {
+          title: message1,
+          text: message2,
+        },
+      });
+
     } catch (error) {
       console.log("An error occurred");
     }
@@ -61,6 +74,84 @@ const TrackDetails = ({ track }) => {
 };
 
 export default TrackDetails;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useEffect, useState } from "react";
+// import { useDispatch, useSelector } from "react-redux";
+// import { client } from "../../api";
+// import { CiHeart } from "react-icons/ci";
+// import { FaHeart } from "react-icons/fa";
+// import "./music.css";
+
+// const TrackDetails = ({ track }) => {
+//   const { user, token } = useSelector((state) => state.user);
+//   const [like, setLike] = useState(false);
+
+//   const handleLike = async (e) => {
+//     e.preventDefault();
+
+//     try {
+//       await client.patch(
+//         `/songs/${track._id}`,
+//         null,
+//         {
+//           headers: {
+//             Authorization: `Bearer ${token}`,
+//           },
+//         }
+//       );
+
+//       console.log("Your favorites have been updated");
+//       setLike(!like);
+//     } catch (error) {
+//       console.log("An error occurred");
+//     }
+//   };
+
+//   const checking = () => {
+//     const result = track.likes.find((id) => id === user._id);
+//     return result || like;
+//   };
+
+//   return (
+//     <div className="music_title">
+//       <img
+//         src={track.coverImage}
+//         alt={track.title}
+//         width="100px"
+//         height="100px"
+//       />
+
+//       <p
+//         style={{ height: "20px", width: "20px" }}
+//         className="like"
+//         onClick={(e) => {
+//           handleLike(e);
+//         }}
+//       >
+//         {checking() ? <FaHeart /> : <CiHeart />}
+//       </p>
+
+//       <p className="text">{track.title}</p>
+//       <p className="text">{track.Artiste}</p>
+//     </div>
+//   );
+// };
+
+// export default TrackDetails;
 
 
 

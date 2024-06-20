@@ -1,4 +1,4 @@
-import { resetPlayer, setTrackList, playTrack, setPlaying } from '../../redux/slices/playerSlice';
+import {setCurrentTrack, resetPlayer, setTrackList, playTrack, setPlaying } from '../../redux/slices/playerSlice';
 import { MusicPlayer } from "../../components/MusicPlayer";
 import { useLocation ,Link, useNavigate, useParams, Outlet } from "react-router-dom";
 import ArtisteSong from "../../components/ArtisteSong";
@@ -14,6 +14,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { logoutUser } from '../../redux/slices/userSlice';
 import MyNavbar from '../MyNavbar';
 import Footer from '../Footer';
+//import { setCurrentTrack,setPlaying } from '../../redux/slices/playerSlice';
 
 export default function ArtistePage() {
 
@@ -74,6 +75,9 @@ export default function ArtistePage() {
 
     useEffect(() => {
         if (token) {
+            dispatch(setCurrentTrack(null));
+            dispatch(dispatch(resetPlayer()));
+            
             getUserId();
             dispatch(resetPlayer());
         }
@@ -81,6 +85,8 @@ export default function ArtistePage() {
     }, []);
 
   const onPlay = (song) => {
+    dispatch(resetPlayer());//dispatch(resetPlayer());
+
         let index = data.userCreateSongs?.findIndex((s) => s._id === song._id);
         if (index !== undefined && index !== null) {
 			console.log(index, data.userCreateSongs)

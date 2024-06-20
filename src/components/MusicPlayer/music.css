@@ -1,4 +1,7 @@
 .base {
+  
+  /* position: sticky;
+  bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,12 +9,23 @@
   padding: 20px;
   background-color: #f2f2f2;
   border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+
+  position: sticky;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .track-button {
+  /* display: inline-block;
+  width: 137%; */
   display: inline-block;
-  width: 137%;
+  width: 100%;
 
   /* display: flex;
   justify-content: space-between;
@@ -20,13 +34,12 @@
   margin-bottom: 20px; */
 }
 
-.btn-type6 {
-  
+/* .btn-type6 {
   background-color: transparent;
   border: none;
   cursor: pointer;
   outline: none;
-}
+} */
 
 .track-range {
   display: flex;
@@ -43,16 +56,24 @@
 }
 
 .music_title {
+  /* display: flex;
+  align-items: center;
+  margin-bottom: 20px; */
+
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .music_title img {
-  width: 100px;
+  /* width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 10px; */
+  width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 11px;
 }
 
 .title {
@@ -61,6 +82,12 @@
 }
 
 .btn-type6 svg {
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
   width: 30px;
   height: 30px;
   color: #555555;

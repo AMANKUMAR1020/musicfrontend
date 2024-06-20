@@ -40,9 +40,9 @@ const ArtisteSong = ({ song, handlePlay }) => {
       {/* <p className="text" onClick={(e) => { handleLike(user._id, e) }}>{cheacking(user._id) ? <FaHeart /> : <CiHeart />}</p> */}
       {/* <p className="text"><Like id={user._id}/></p> */}
 
-  <p className="text">{
+  <p className="text">{/*className="text"*/
     isCurrentTrack && isPlaying ? 
-      (<p style={{ fontSize: '40px' }} className="btn-type4"><GiMusicalNotes /></p>) :
+      (<button style={{ fontSize: '40px' }} className="btn-type4"><GiMusicalNotes /></button>) :
       (!isPlaying ? (<button style={{ fontSize: '40px' }} className="btn-type4" onClick={playSong}><BsFillPlayCircleFill /></button>) : null)
     }
   </p>

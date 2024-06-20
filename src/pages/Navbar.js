@@ -14,9 +14,8 @@ const Navbar = () => {
             src={user.image}
             alt={user.username}
             style={{ width: "80px", height: "80px" }}
-          />
+          /><span>&nbsp;&nbsp;</span>
           <h3 className="headline3">{user ? user.username : ""}</h3>
-
         </div>
 
         {/* <MyNavbar/> */}

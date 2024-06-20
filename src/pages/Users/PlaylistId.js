@@ -4,7 +4,7 @@ import { useParams, Link, Outlet } from "react-router-dom";
 import { MdErrorOutline } from "react-icons/md";
 import ArtisteSong from "../../components/ArtisteSong";
 import { useDispatch, useSelector } from "react-redux";
-import { playTrack,setTrackList } from "../../redux/slices/playerSlice";
+import { resetPlayer, playTrack,setTrackList } from "../../redux/slices/playerSlice";
 import { BsFillPlayFill } from "react-icons/bs";
 import { AiFillEdit } from "react-icons/ai";
 import { MusicPlayer } from "../../components/MusicPlayer";
@@ -50,11 +50,17 @@ const PlaylistId = () => {
 	}, []);
 
 	const handlePlay = () => {
+		
+		dispatch(resetPlayer());//dispatch(resetPlayer());
+
 		dispatch(setTrackList({ list: data?.playlistSongs }));
 		dispatch(playTrack(data?.playlistSongs[0]));
 	};
 
 	const onSongPlay = (song) => {
+
+		//dispatch(resetPlayer());//dispatch(resetPlayer());
+
 		const index = data?.playlistSongs.findIndex((s) => s._id === song._id);
 
 		dispatch(setTrackList({ list: data?.playlistSongs, index }));
@@ -70,7 +76,6 @@ const PlaylistId = () => {
         <>
         {errorMsg}
             <MdErrorOutline color="inherit" size={32} />
-            <p>An error occured</p>
         </>
 		);
 	}

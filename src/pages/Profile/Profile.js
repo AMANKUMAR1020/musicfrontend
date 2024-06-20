@@ -1,4 +1,4 @@
-import { resetPlayer, setTrackList, playTrack, setPlaying } from '../../redux/slices/playerSlice';
+import { setCurrentTrack,resetPlayer, setTrackList, playTrack, setPlaying } from '../../redux/slices/playerSlice';
 import { MusicPlayer } from "../../components/MusicPlayer";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import ArtisteSong from "../../components/ArtisteSong";
@@ -90,6 +90,11 @@ export default function Profile() {
     // lfe
 
     const onPlay = (song) => {
+
+      dispatch(setCurrentTrack(null));
+      dispatch(setPlaying(false));
+
+
       let index = data.userCreateSongs?.findIndex((s) => s?._id === song?._id);
     
       console.log(index);
@@ -228,8 +233,8 @@ export default function Profile() {
             {!loading && !error && !data && (<p>{"You haven't any songs yet..."}</p>)}
 
             <div className='flex-card2'>
-              <img style={{display: 'inline'}} src={data?.user?.image} alt={data?.user?.username} width="150px" height="150px"/>        
-              <p className='headline3'>{data?.user?.username}{" "}</p>
+              <img style={{display: 'inline', margin:"5px"}} src={data?.user?.image} alt={data?.user?.username} width="150px" height="150px"/><span>&nbsp;&nbsp;&nbsp;</span>
+              <p className='headline3'>{data?.user?.username}<span>&nbsp;&nbsp;&nbsp;</span></p>
               <p className='headline3'>{data?.user?.name}</p>
                 <button className='btn-type3' onClick={() => { navigate('/edit') }}><RiEdit2Fill/></button>
             </div>

@@ -25,16 +25,19 @@
     margin-top: 10px;
   }
   
-  .button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+  .button {    
+    padding: 0px 15px;
+    background-color: #e1ff00;
+    color: #62635f;
     border: none;
-    border-radius: 4px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
     cursor: pointer;
   }
   
   .button:hover {
-    background-color: #0056b3;
+    background-color: #eaeef3;
+    color: #e1ff00;
   }
   

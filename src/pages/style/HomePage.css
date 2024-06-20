@@ -6,8 +6,12 @@
 
 :root {
 
-  --TEXT-COLOR: #aa9c9c;/*this is also button color*/
+  --APP-TEXT-COLOR:#F1F17D;/*App name*/
+  --BACKGROUND-COLOR:#f5f54fa8;
+
+  --TEXT-COLOR: #aa9c9c;/*this is also button color*//*azure*/
   --TEXT-HOVER-COLOR:#e7dddd;
+  
   --HEADLINE-COLOR: #5c5a5a;
   --HEADLINE-FONT-WEIGHT:900;
   --HEADLINE-FONT-SIZE:40px;
@@ -48,8 +52,53 @@
   font-weight: var(--HEADLINE2-FONT-WEIGHT);
 }
 
+/*Register*/
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* .input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+} */
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+/* .button {    
+  padding: 0px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+} */
+
+
+
+
 .btn-type1 {
-  display: flexbox;
+  /* display: flexbox;
   padding: 10px 20px;
   margin: 10px;
   background-color: #3f96f3;
@@ -57,15 +106,26 @@
   font-size: large;
   border: none;
   border-radius: 7px;
+  cursor: pointer; */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
   cursor: pointer;
+  font-size: 15px;
+
 }
 
 .btn-type1:hover {
-  background-color: #2788ef;
+  /* background-color: #2788ef; */
+  background-color: #0056b3;
+
 }
 
 .btn-type1:active {
-  background-color: #2686ec;
+  background-color: #0056b3;
+  /* background-color: #2686ec; */
 }
 
 .btn-type1:focus {
@@ -219,11 +279,7 @@ img {
 
 }
 .nav-link1{
-
-}
-
-.nav-link2{
-
+  display: flex;
 }
 
 /*Footer*/
@@ -233,7 +289,7 @@ img {
   background-color: #f5f54fa8;
   display: flex;
   padding: 7px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 

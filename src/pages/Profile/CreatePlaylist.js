@@ -9,6 +9,8 @@ import { Outlet } from "react-router-dom";
 import MyNavbar from "../MyNavbar";
 import Footer from "../Footer";
 
+import { toast, ToastContainer } from 'react-toastify';
+
 const CreatePlaylist = () => {
   const [data, setData] = useState([]);
   const [title, setTitle] = useState("");
@@ -71,12 +73,29 @@ const CreatePlaylist = () => {
           "Content-Type": "application/json"
         },
       }).then((res) => {
+        
         console.log("songsIds", res.data);
+
+        toast("Register Successufully! ", {
+          data: {
+            title: "Success toast",
+            text: "This is a success message",
+          },
+        });
+
       });
     } catch (error) {
       setError(true);
       setLoading(false);
       setErrorMsg(error);
+
+      toast("something went wrong", {
+        data: {
+          title: "something went wrong",
+          text: "try again! ",
+        },
+      });
+
     }  
   };
 
@@ -139,6 +158,8 @@ const CreatePlaylist = () => {
       <button className="btn-type6" onClick={handleSubmit}>
         {loading ? <p><AiOutlineLoading className="AiOutlineLoading" size={36} /></p> : <p>Create Playlist</p>}
       </button>
+
+      <ToastContainer/>
 
     <Outlet/>
     <Footer/>

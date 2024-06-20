@@ -54,7 +54,7 @@ export default function PlaylistPage() {
 
           <div className="flex-card2" key={playlist._id}>
             <Link to={`${playlist._id}`}>
-              <p  className="headline3">{playlist.title}{' '}</p>
+              <p  className="headline3">{playlist.title}<span>&nbsp;</span></p>
             </Link>
             <p className="text">{trimming(playlist.description)}</p>
           </div>
