@@ -5,13 +5,15 @@ import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
 import MyNavbar from "./MyNavbar";
 import Footer from "./Footer";
+import { ToastContainer } from 'react-toastify';
 
 const Dashboard = () => {
   return (
     <>
       <MyNavbar/>
         <Navbar/>
-        <SongList />
+        <SongList/>
+        <ToastContainer/>
         <Outlet />
       <Footer/>
     </>
@@ -19,6 +21,36 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
+
+
+
+
+
+
+
+// import React from "react";
+// import "./style/HomePage.css";
+// import SongList from "./SongList";
+// import Navbar from "./Navbar";
+// import { Outlet } from "react-router-dom";
+// import MyNavbar from "./MyNavbar";
+// import Footer from "./Footer";
+
+// const Dashboard = () => {
+//   return (
+//     <>
+//       <MyNavbar/>
+//         <Navbar/>
+//         <SongList/>
+//         <Outlet />
+//       <Footer/>
+//     </>
+//   );
+// };
+
+// export default Dashboard;
 
 
 

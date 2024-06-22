@@ -1,5 +1,4 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-//import { MusicPlayer } from "../components/MusicPlayer/index.jsx";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 

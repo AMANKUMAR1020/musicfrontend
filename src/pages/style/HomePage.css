@@ -79,6 +79,10 @@
   color: red;
   margin-top: 10px;
 }
+.success {
+  color: rgb(7, 174, 7);
+  margin-top: 10px;
+}
 
 /* .button {    
   padding: 0px 15px;
@@ -181,6 +185,122 @@
   background-color: var(--TEXT-HOVER-COLOR);
 }
 
+.btn-type4 {
+
+  /* text-align: center;
+  top: -70px;
+  position: relative;
+  display: inline-grid;
+  margin-bottom: 20px;
+  background: none;
+  color: var(--TEXT-COLOR);
+  border: none;
+  border-radius: 7px;
+  cursor: pointer; */
+
+  /* position: relative;
+  padding: 10px 20px;
+  margin: 10px;
+  text-align: center;
+  bottom: 82px;
+  margin-bottom: 20px;
+  background: none;
+  color: var(--TEXT-COLOR);
+  border: none;
+  border-radius: 7px; */
+
+  position: relative;
+  padding: 10px 20px;
+  margin: 10px;
+  text-align: center;
+  bottom: 161px;
+  margin-bottom: 20px;
+  background: none;
+  color: var(--TEXT-COLOR);
+  border: none;
+  border-radius: 7px;
+
+
+  /* position: relative;
+  padding: 10px 20px;
+  top: -155px;
+  border: none;
+  border-radius: 7px;
+  color: darkgray;
+  background: transparent; */
+
+}
+
+.btn-type4:hover {
+  background-color: #635e5e;
+}
+
+.playingText {
+  text-align: center;
+  font-weight: bold;
+  color: #ff4d4d;
+}
+
+
+.btn-type5{
+  /* position: relative;
+  right: 60px;
+  bottom: 30px;
+  display: inline;
+  padding: 10px 20px;
+  color: var(--TEXT-COLOR);
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer; */
+
+
+  position: relative;
+  right: 75px;
+  bottom: 95px;
+  display: inline;
+  padding: 5px 15px;
+  color: var(--TEXT-COLOR);
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  background: transparent;
+
+}
+
+.btn-type5:hover{
+  background-color: #635e5e;
+}
+
+
+.btn-type6{
+  /* display: contents; */
+  color: var(--TEXT-COLOR);
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.btn-type6:hover{
+  background-color: #edacac;
+}
+
+
+.btn-type7{
+  display: "inline";
+  margin: "7px";
+  padding: "0px 10px";
+  color: "gray";
+  font-size: "1.4rem";
+  border: "none";
+  border-radius: "7px";
+  cursor: "pointer";
+}
+.btn-type7:hover{
+  background-color: #edacac;
+}
+
 .btn-type3:focus {
   outline: none;
 }
@@ -253,7 +373,6 @@ img {
   background-color: #f2f2f2;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
 }
 
 
@@ -273,10 +392,6 @@ img {
   font-size: 80px;
   padding: 5px;
   color: azure;
-}
-
-.nav-link{
-
 }
 .nav-link1{
   display: flex;
@@ -515,127 +630,6 @@ img {
 .songlistText:hover {
   cursor: pointer;
 }
-
-.btn-type4 {
-
-  /* text-align: center;
-  top: -70px;
-  position: relative;
-  display: inline-grid;
-  margin-bottom: 20px;
-  background: none;
-  color: var(--TEXT-COLOR);
-  border: none;
-  border-radius: 7px;
-  cursor: pointer; */
-
-  /* position: relative;
-  padding: 10px 20px;
-  margin: 10px;
-  text-align: center;
-  bottom: 82px;
-  margin-bottom: 20px;
-  background: none;
-  color: var(--TEXT-COLOR);
-  border: none;
-  border-radius: 7px; */
-
-  position: relative;
-  padding: 10px 20px;
-  margin: 10px;
-  text-align: center;
-  bottom: 161px;
-  margin-bottom: 20px;
-  background: none;
-  color: var(--TEXT-COLOR);
-  border: none;
-  border-radius: 7px;
-
-
-  /* position: relative;
-  padding: 10px 20px;
-  top: -155px;
-  border: none;
-  border-radius: 7px;
-  color: darkgray;
-  background: transparent; */
-
-}
-
-.btn-type4:hover {
-  background-color: #635e5e;
-}
-
-.playingText {
-  text-align: center;
-  font-weight: bold;
-  color: #ff4d4d;
-}
-
-
-.btn-type5{
-  /* position: relative;
-  right: 60px;
-  bottom: 30px;
-  display: inline;
-  padding: 10px 20px;
-  color: var(--TEXT-COLOR);
-  font-size: 1.8rem;
-  border: none;
-  border-radius: 7px;
-  cursor: pointer; */
-
-
-  position: relative;
-  right: 75px;
-  bottom: 95px;
-  display: inline;
-  padding: 5px 15px;
-  color: var(--TEXT-COLOR);
-  font-size: 1.8rem;
-  border: none;
-  border-radius: 7px;
-  cursor: pointer;
-  background: transparent;
-
-}
-
-.btn-type5:hover{
-  background-color: #635e5e;
-}
-
-
-.btn-type6{
-  /* display: contents; */
-  color: var(--TEXT-COLOR);
-  font-size: 1.4rem;
-  border: none;
-  border-radius: 7px;
-  cursor: pointer;
-}
-.btn-type6:hover{
-  background-color: #edacac;
-}
-
-
-.btn-type7{
-  display: "inline";
-  margin: "7px";
-  padding: "0px 10px";
-  color: "gray";
-  font-size: "1.4rem";
-  border: "none";
-  border-radius: "7px";
-  cursor: "pointer";
-}
-.btn-type7:hover{
-  background-color: #edacac;
-}
-
-
-
-
-
 
 
 textarea {
