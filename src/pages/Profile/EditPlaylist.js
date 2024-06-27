@@ -6,10 +6,13 @@ import { Outlet, useNavigate, useParams } from "react-router-dom";
 import { AiOutlineLoading } from "react-icons/ai";
 import MyNavbar from "../MyNavbar";
 import Footer from "../Footer";
-
+import useTitle from "../useTitle";
 
 
 const EditPlaylist = () => {
+
+  useTitle('Edit Playlist')
+
   const [data, setData] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -134,7 +137,7 @@ const EditPlaylist = () => {
   return (
     <>
     <MyNavbar/>
-      <h1 className="headline1">Playlist Creation</h1>
+      <h1 className="headline1">Playlist Edit</h1>
       {error && <p className="error">{errorMsg} <MdErrorOutline color="inherit" size={32} /></p>}
       {successMsg && <p className="success">{successMsg}</p>}
 
@@ -152,7 +155,7 @@ const EditPlaylist = () => {
 
       <h3 className="headline3">Playlist description</h3>
       <textarea
-        style={{ width: "40%", height: "87px", display:"block" }}
+        style={{ width: "40%", height: "87px", display:"block",fontSize: '18px', color:'darkslategray' }}
         value={description}
         onChange={(e) => { setDescription(e.target.value); }}
         rows="5"
@@ -160,8 +163,8 @@ const EditPlaylist = () => {
       ></textarea>
 
       <h3 className="text">Playlist is Private</h3>
-      <button className="btn-type7"
-        onClick={() => setIsPrivate(!isPrivate)}>{isPrivate ? <p>true</p> : <p>false</p>}
+      <button className="btn-type2"
+        onClick={() => setIsPrivate(!isPrivate)}>{isPrivate ? <p className="text">true</p> : <p className="text">false</p>}
       </button>
 
       <div className="Container"><h3 className="headline3">Songs </h3></div>
@@ -181,14 +184,13 @@ const EditPlaylist = () => {
         ))}
       </ul>
 
-      <button className="btn-type6" onClick={()=>{navigate(-1)}}> <p>Back</p></button>
-      <button className="btn-type6" onClick={handleSubmit}>
+      <button className="btn-type-back" onClick={()=>{navigate(-1)}}> Back</button>
         {loading 
         ?
         <p><AiOutlineLoading className="AiOutlineLoading" size={36} /></p>
         :
-        <p>Edit Playlist</p>}
-      </button>
+        <button className="btn-type10" onClick={handleSubmit}>Edit Playlist</button>
+        }
 
     <Outlet/>
     <Footer/>

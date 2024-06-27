@@ -6,8 +6,14 @@ import { Outlet } from "react-router-dom";
 import MyNavbar from "./MyNavbar";
 import Footer from "./Footer";
 import { ToastContainer } from 'react-toastify';
+import useTitle from "./useTitle";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
+  const { user} = useSelector((state) => state.user);
+
+  useTitle(`Welcome ${user.username}`)
+
   return (
     <>
       <MyNavbar/>

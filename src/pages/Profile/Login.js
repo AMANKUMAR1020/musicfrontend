@@ -9,10 +9,12 @@ import ClipLoader from "react-spinners/ClipLoader";
 import '../style/Register.css'
 import MyNavbar from "../MyNavbar";
 import Footer from "../Footer";
-
+import useTitle from "../useTitle";
 //import { useNotificationCenter } from 'react-toastify/addons/use-notification-center';
 
 const LoginPage = () => {
+
+	useTitle('Login Page')
 
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(false);
@@ -97,7 +99,8 @@ const LoginPage = () => {
 		</div>
 
 			{error && <p className="error">{error}</p>}
-			<button className="btn-type1" onClick={handleLogin}>Login</button>
+			<button className="btn-type-back" onClick={()=>{navigate(-1)}}>Back</button>
+			<button className="btn-type10" onClick={handleLogin}>Login</button>
 		</div>
 	<Outlet/>
 	<Footer/>

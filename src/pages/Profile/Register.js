@@ -10,8 +10,12 @@ import MyNavbar from "../MyNavbar";
 import Footer from "../Footer";
 import { AiOutlineLoading } from "react-icons/ai";
 import ClipLoader from "react-spinners/ClipLoader";
+import useTitle from "../useTitle";
 
 const RegisterPage = () => {
+
+  useTitle('Signin Page')
+
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
@@ -90,9 +94,15 @@ const RegisterPage = () => {
           />
         </div>
         {error && <p className="error">{error}</p>}
-        <button className="btn-type1" onClick={handleLogin}>
-          {loading ? <p><AiOutlineLoading className="AiOutlineLoading" size={36} /></p> : <p>Register</p>}
-        </button>
+        
+          <button className="btn-type-back" onClick={()=>{navigate(-1)}}>Back</button>
+
+          {loading 
+          ?
+          <p><AiOutlineLoading className="AiOutlineLoading" size={36} /></p>
+          : 
+          <button className="btn-type1" onClick={handleLogin}>Register</button>}
+          
     </div>
 
     <Outlet/>

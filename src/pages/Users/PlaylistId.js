@@ -14,8 +14,12 @@ import { BsCollectionPlayFill } from "react-icons/bs";
 import { AiOutlineLoading } from "react-icons/ai";
 import MyNavbar from "../MyNavbar";
 import Footer from "../Footer";
-
+import useTitle from "../useTitle";
+import ClipLoader from "react-spinners/ClipLoader";
+ 
 const PlaylistId = () => {
+
+
 	const [data, setData] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
@@ -27,6 +31,8 @@ const PlaylistId = () => {
 	const { user } = useSelector((state) => state.user);
 	const { currentTrack } = useSelector((state) => state.player);
 	const isUserPlaylist = user?.id === data?.userId;
+
+	useTitle(`${user.username}'s playlist`)
 
 	const PlaylistById = async () => {
 		setLoading(true);
@@ -67,8 +73,20 @@ const PlaylistId = () => {
 		dispatch(playTrack(song));
 	};
 
-	if (loading) {
-		return <><AiOutlineLoading className="spin" size={36} /></>;
+	if(loading){
+		return (<>
+		<ClipLoader
+        color='yellow'
+        loading={loading}
+		cssOverride={{
+			display: "block",
+			margin: "0 auto",
+			borderColor: "yellow",
+			}}
+        size={100}
+        aria-label="Loading Spinner"
+        data-testid="loader"/>
+		</>)
 	}
 
 	if (error) {
@@ -83,15 +101,18 @@ const PlaylistId = () => {
 	return (
 		<>
 		<MyNavbar/>
-			<h2 className="headline1">{data?.playlist?.title}</h2>
-			<p className="headline2">{data?.playlist?.description}</p>
+			<h2 className="headline2">{data?.playlist?.title}</h2>
+			<p style={{padding: '10px 0px 10px 0px',margin: '5px'}} className="text">{data?.playlist?.description}</p>
 			
-			{data?.playlist?.isPrivate ? (<div className="text">private</div>) : (<div className="text">public</div>)}
+			{data?.playlist?.isPrivate ?
+			(<div style={{padding: '10px 0px 10px 0px',margin: '5px'}} className="text">private</div>)
+			:
+			(<div style={{padding: '10px 0px 10px 0px',margin: '5px'}}className="text">public</div>)}
 
 			{/* <MyNavbar/> */}
 
-			<h4>{data?.playlistSongs?.length} Songs</h4>
-			<button className="btn-type2" onClick={handlePlay}>Play All<BsCollectionPlayFill/></button>
+			<h4 style={{padding: '10px 0px 10px 0px',margin: '5px'}} className="text">{data?.playlistSongs?.length} Songs</h4>
+			<button className="btn-type10" onClick={handlePlay}>Play All<BsCollectionPlayFill/></button>
 
 			<div className="Container">
 				{data?.playlistSongs?.map((song) => (

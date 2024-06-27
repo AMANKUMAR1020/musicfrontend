@@ -6,11 +6,16 @@ import './style/PlaylistPage.css'
 import './style/HomePage.css'
 import MyNavbar from './MyNavbar'
 import Footer from "./Footer";
+import useTitle from "./useTitle";
+import ClipLoader from "react-spinners/ClipLoader";
+
 
 export default function PlaylistPage() {
   const [playlists, setPlaylists] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+
+  useTitle('Get Awesome Playlist')
 
   const fetchPlaylists = async () => {
     setLoading(true);
@@ -36,6 +41,22 @@ export default function PlaylistPage() {
     }
     return desc;
   };
+
+  if(loading){
+		return (<>
+		<ClipLoader
+        color='yellow'
+        loading={loading}
+		cssOverride={{
+			display: "block",
+			margin: "0 auto",
+			borderColor: "yellow",
+			}}
+        size={100}
+        aria-label="Loading Spinner"
+        data-testid="loader"/>
+		</>)
+	}
 
   return (
     <>

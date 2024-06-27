@@ -5,7 +5,7 @@ import { useState } from "react";
 const VolumeControl = ({ onToggle, onChange, volume }) => {
 		
 	return (
-		<div class="title">
+		<div class="vol-title">
 			<button className="btn-type6" onClick={onToggle} >{volume === 0 ? <BsFillVolumeMuteFill /> : <BsFillVolumeUpFill />}</button>
 			<input type="range" value={volume ? volume * 100 : 0} onChange={onChange}/>
 		</div>

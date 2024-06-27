@@ -5,7 +5,6 @@ import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import "./music.css";
 
-import { toast, ToastContainer } from 'react-toastify';
 
 const TrackDetails = ({ track }) => {
   const { user, token } = useSelector((state) => state.user);
@@ -27,16 +26,6 @@ const TrackDetails = ({ track }) => {
 
       console.log("Your favorites have been updated");
       setLike(!like);
-
-      const message1 = like ? "Like Successufully!" : "UnLike Successufully!" 
-      const message2 = like ? "Like Successufully! This is a success message " : "UnLike Successufully!  This is a success message " 
-
-      toast.success(message1, {
-        data: {
-          title: message1,
-          text: message2,
-        },
-      });
 
     } catch (error) {
       console.log("An error occurred");
@@ -67,8 +56,8 @@ const TrackDetails = ({ track }) => {
         {checking() ? <FaHeart /> : <CiHeart />}
       </p>
 
-      <p className="text">{track.title}</p>
-      <p className="text">{track.Artiste}</p>
+      <p className="music-text">{track.title}</p><span>&nbsp;&nbsp;&nbsp;</span>
+      <p className="music-text">{track.Artiste}</p>
     </div>
   );
 };

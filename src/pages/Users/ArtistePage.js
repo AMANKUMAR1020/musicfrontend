@@ -11,12 +11,13 @@ import SongList from "../SongList";
 import '../style/HomePage.css'
 
 import ClipLoader from "react-spinners/ClipLoader";
-import { logoutUser } from '../../redux/slices/userSlice';
 import MyNavbar from '../MyNavbar';
 import Footer from '../Footer';
+import useTitle from '../useTitle';
 //import { setCurrentTrack,setPlaying } from '../../redux/slices/playerSlice';
 
 export default function ArtistePage() {
+
 
     const { id } = useParams()
     const [data, setData] = useState({});
@@ -27,26 +28,9 @@ export default function ArtistePage() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    useTitle(`${user.username}'s Profile`)
+
 	const location = useLocation();
-  
-	let bg1 = "#007bff";
-	let bg2 = "#007bff";
-	let bg3 = "#007bff";
-  
-	if (location.pathname === "/artistes") {
-	  bg1 = "#0056b3";
-	  bg2 = "#007bff";
-	}
-  
-	if (location.pathname === "/profile") {
-	  bg2 = "#0056b3";
-	  bg1 = "#007bff";
-	}
-  
-	if (location.pathname === "/playlist") {
-	  bg3 = "#0056b3";
-	  bg1 = "#007bff";
-	}
 
     console.log("enter in ArtistePage");
 
@@ -119,6 +103,22 @@ export default function ArtistePage() {
       </>
     }
 
+    if(loading){
+        return (<>
+            <ClipLoader
+            color='yellow'
+            loading={loading}
+            cssOverride={{
+                display: "block",
+                margin: "0 auto",
+                borderColor: "yellow",
+                }}
+            size={100}
+            aria-label="Loading Spinner"
+            data-testid="loader"/>
+            </>)
+    }
+
     return (
         <>
         <MyNavbar/>
@@ -127,22 +127,23 @@ export default function ArtistePage() {
 
         <div style={{textAlign: 'left', margin: '20px' , padding: '20px'}}>
                 {/* <h1 className="headline1">ArtistePage</h1> */}
-                {!loading && !error && !data && (<p>{"You haven't any songs yet..."}</p>)}
+                {!loading && !error && !data && (<p className='text'>{"You haven't any songs yet..."}</p>)}
+
 
                 <div className='flex-card'>
                     {/* <button onClick={()=>{navigate('/profile/edit')}}>	Profile Edit </button> */}
 
                     <img style={{display: 'inline'}} src={data?.user?.image} alt={data?.user?.username} width="150px" height="150px"/>
-                    <p className='headline3'>{" "}{data?.user?.username}</p>
-                    <p className='headline3'>{data?.user?.name}{" "}</p>
+                    <p className='headline3'>&nbsp;&nbsp;&nbsp;{data?.user?.username}</p>
+                    <p className='headline3'>&nbsp;&nbsp;&nbsp;{data?.user?.name}</p>
                 </div>
 
                 <div className='Container'>
                     <h1 className="headline2">userCreateSongs</h1>
                     {/* <button onClick={()=>{navigate('/profile/createsong')}}>Upload New</button> */}
 
-                    {loading && data?.userCreateSongs?.length < 1 && <p>You have not created any songs</p>}
-                    {error && (<p>Sorry, an error occurred</p>)}
+                    {data?.userCreateSongs?.length < 1 && <p className='text'>You have not created any songs</p>}
+                    {error && (<p className='error' >Sorry, an error occurred</p>)}
                     <div>
                         {data?.userCreateSongs?.map((song) => (
                             <ArtisteSong key={song?._id} song={song} handlePlay={onPlay} />
@@ -154,8 +155,8 @@ export default function ArtistePage() {
 
             <div className='Container'>
                 <h1 className="headline2">userFavoritesSongs</h1>
-                {loading && data?.userFavoritesSongs?.length < 1 && <p>You have not favorited any songs</p>}
-                {error && (<p>Sorry, an error occurred</p>)}
+                {data?.userFavoritesSongs?.length < 1 && <p className='text'>You have not favorited any songs</p>}
+                {error && (<p className='error'>Sorry, an error occurred</p>)}
                 <div>
                     {data?.userFavoritesSongs?.map((song) => (
                         <ArtisteSong key={song?._id} song={song} handlePlay={onPlay} />

@@ -11,8 +11,12 @@ import { resetPlayer,setCurrentTrack,setPlaying } from "../redux/slices/playerSl
 import './style/HomePage.css'
 import MyNavbar from "./MyNavbar";
 import Footer from "./Footer";
+import useTitle from "./useTitle";
 
 const ArtistesPage = () => {
+
+	useTitle('Ppopular Atistes')
+
 	const [artistes, setArtistes] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
@@ -59,7 +63,7 @@ const ArtistesPage = () => {
 						cssOverride={{
 							display: "block",
 							margin: "0 auto",
-							borderColor: "red",
+							borderColor: "yellow",
 						}}
 						size={100}
 						aria-label="Loading Spinner"
@@ -71,7 +75,7 @@ const ArtistesPage = () => {
 					<div key={artiste.id}>
 						<img src={artiste.image} alt={artiste.username} width="150px" height="150px" />
 						<Link to={`${artiste.id}`}>
-							<p onClick={flush}>{artiste.name}</p>
+							<p className="text" onClick={flush}>{artiste.name}</p>
 						</Link>
 					</div>
 				))}

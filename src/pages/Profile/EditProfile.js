@@ -8,7 +8,7 @@ import MyNavbar from '../MyNavbar';
 import Footer from '../Footer';
 import { storage } from '../../firebase';
 import { ref, getDownloadURL, uploadBytesResumable, deleteObject } from 'firebase/storage';
-
+import useTitle from '../useTitle';
 
 function EditProfile() {
   const { user, token } = useSelector((state) => state.user);
@@ -18,6 +18,7 @@ function EditProfile() {
   const [updatedName, setUpdatedName] = useState(user.name);
   const [updatedImage, setUpdatedImage] = useState("");
   const [progresspercentimg, setProgresspercentimg] = useState(0);
+  useTitle('Edit Profile')
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -155,8 +156,8 @@ function EditProfile() {
         }
 
       </div>
-      <button className="btn-type2" onClick={handleSubmit}>Update</button>
-      <button className="btn-type2" onClick={()=>{navigate(-1)}}>Back</button>
+      <button className="btn-type-back" onClick={()=>{navigate(-1)}}>Back</button>
+      <button className="btn-type10" onClick={handleSubmit}>Update</button>
   
       {loading && <p><AiOutlineLoading className="AiOutlineLoading" size={36}/></p>}
       {/* {loading ? <p><AiOutlineLoading className="AiOutlineLoading" size={36}/></p> : <p></p>} */}

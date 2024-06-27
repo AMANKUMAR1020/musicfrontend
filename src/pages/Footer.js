@@ -8,28 +8,29 @@ import "./style/HomePage.css";
 export default function Footer(){  
   const d = new Date();
   let year = d.getFullYear();
+  
       return(
         <>
         <div className="footbar">
-          <button className="btn-type8">
+          <button style={{background:'transparent', color:'gray'}} className="btn-type8">
             <a href="https://www.linkedin.com/in/aman-kumar-86062722b" target="_blank">
               <FaLinkedin /> 
             <p className="text">Linkedin</p></a>
           </button>
 
-          <button className="btn-type8">
+          <button style={{background:'transparent', color:'gray'}} className="btn-type8">
             <a href="https://github.com/AMANKUMAR1020" target="_blank">
                 <FaGithubAlt />
             <p className="text">Github</p></a>
           </button>
     
-          <button className="btn-type8">
+          <button style={{background:'transparent', color:'gray'}} className="btn-type8">
             <a href="https://x.com/AMANKUMAR102030" target="_blank">
               <BsTwitterX /> 
             <p className="text">Twitter</p></a>
           </button>
     
-          <button className="btn-type8">
+          <button style={{background:'transparent', color:'gray'}} className="btn-type8">
             <a href="https://leetcode.com/u/amankumar1020/" target="_blank">
               <SiLeetcode />
             <p className="text">Leetcode</p></a>

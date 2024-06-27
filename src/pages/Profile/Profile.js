@@ -21,6 +21,7 @@ import { LuUpload } from "react-icons/lu";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { MdOutlineCreateNewFolder } from "react-icons/md";
 import Footer from '../Footer';
+import useTitle from '../useTitle';
 
 
 export default function Profile() {
@@ -33,6 +34,8 @@ export default function Profile() {
     const [deleteItems, setDeleteItems] = useState('')
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    useTitle(`Welcome ${user.username}`)
     
 
     console.log("enter in Profile");
@@ -207,7 +210,7 @@ export default function Profile() {
             {!loading && !error && !data && (<p  className='text'>{"You haven't any songs yet..."}</p>)}
             {deleteItems && <p className='success'>{deleteItems}</p>}
 
-            <div className='flex-card2'>
+            <div className='flex-card-edit'>
               <img src={data?.user?.image} alt={data?.user?.username} width="150px" height="150px"/><span>&nbsp;&nbsp;&nbsp;</span>
               <p className='headline3'>{data?.user?.username}<span>&nbsp;&nbsp;&nbsp;</span></p>
               <p className='headline3'>{data?.user?.name}</p>
