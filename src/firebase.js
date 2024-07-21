@@ -7,12 +7,12 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDte_DycKTrSSwlcmtRF8LOg4QCIGNSBTw",
-  authDomain: "music-4d660.firebaseapp.com",
-  projectId: "music-4d660",
-  storageBucket: "music-4d660.appspot.com",
-  messagingSenderId: "956326287282",
-  appId: "1:956326287282:web:4da1e729cef4bc2441f6ab"
+  apiKey: "AIzaSyDamNnYsJEXb9YCZqICefOX25xVdHyznfE",
+  authDomain: "music-f1778.firebaseapp.com",
+  projectId: "music-f1778",
+  storageBucket: "music-f1778.appspot.com",
+  messagingSenderId: "915892083645",
+  appId: "1:915892083645:web:e14e99f73571c69b0e90d4"
 };
 
 // Initialize Firebase
